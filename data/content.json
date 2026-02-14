@@ -34,8 +34,8 @@
     },
     {
       "id": 3,
-      "agent_name": "Agente ChatBot 24/7",
-      "title": "Atención al Cliente",
+      "agent_name": "Agente de ventas 24/7",
+      "title": "Ventas por WhatsApp",
       "description": "Responde dudas, captura datos y cierra ventas mientras duermes.",
       "details": [
         "Entrenamiento con tu propia base de conocimiento",

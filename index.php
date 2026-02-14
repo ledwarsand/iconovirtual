@@ -22,9 +22,9 @@ if ($tracking['google_tag_manager']['enabled']) {
             w[l] = w[l] || []; w[l].push({
                 'gtm.start': \n";
     echo "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n";
-                echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n";
-                echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n";
-                echo "})(window,document,'script','dataLayer','" .$tracking['google_tag_manager']['container_id']. "');</script>\n";
+    echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n";
+    echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n";
+    echo "})(window,document,'script','dataLayer','" . $tracking['google_tag_manager']['container_id'] . "');</script>\n";
     echo "<!-- End Google Tag Manager -->\n";
 }
 
@@ -45,16 +45,16 @@ if ($tracking['meta_pixel']['enabled']) {
     echo "<!-- Meta Pixel Code -->\n";
     echo "<script>\n";
     echo "!function(f,b,e,v,n,t,s)\n";
-                echo "{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n";
-                echo "n.callMethod.apply(n,arguments):n.queue.push(arguments)};\n";
-                echo "if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\n";
-                echo "n.queue=[];t=b.createElement(e);t.async=!0;\n";
-                echo "t.src=v;s=b.getElementsByTagName(e)[0];\n";
-                echo "s.parentNode.insertBefore(t,s)}(window, document,'script',\n";
-                echo "'https://connect.facebook.net/en_US/fbevents.js');\n";
-                echo "fbq('init', '" .$tracking['meta_pixel']['pixel_id']. "');\n";
-                echo "fbq('track', 'PageView');\n";
-                echo "</script>\n";
+    echo "{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n";
+    echo "n.callMethod.apply(n,arguments):n.queue.push(arguments)};\n";
+    echo "if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\n";
+    echo "n.queue=[];t=b.createElement(e);t.async=!0;\n";
+    echo "t.src=v;s=b.getElementsByTagName(e)[0];\n";
+    echo "s.parentNode.insertBefore(t,s)}(window, document,'script',\n";
+    echo "'https://connect.facebook.net/en_US/fbevents.js');\n";
+    echo "fbq('init', '" . $tracking['meta_pixel']['pixel_id'] . "');\n";
+    echo "fbq('track', 'PageView');\n";
+    echo "</script>\n";
     echo "<noscript><img height='1' width='1' style='display:none'\n";
     echo "src='https://www.facebook.com/tr?id=" . $tracking['meta_pixel']['pixel_id'] . "&ev=PageView&noscript=1'\n";
     echo "/></noscript>\n";
@@ -141,7 +141,7 @@ endforeach; ?>
         <section class="service-slide <?php echo $service['css_class']; ?>-section"
             id="service-<?php echo $service['id']; ?>">
             <div class="container">
-                <div class="service-content-wrapper">
+                <div class="service-content-wrapper <?php echo ($index % 2 === 0) ? 'is-reversed' : ''; ?>">
                     <!-- Text Side -->
                     <div class="service-text" data-aos="fade-right">
                         <div class="agent-name">
@@ -289,6 +289,26 @@ endforeach; ?>
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
         </svg>
     </a>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="#service-1" class="mobile-nav-item">
+            <i class="fas fa-bullhorn"></i>
+            <span>Noticias</span>
+        </a>
+        <a href="#service-2" class="mobile-nav-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Agenda</span>
+        </a>
+        <a href="#service-3" class="mobile-nav-item">
+            <i class="fas fa-comments"></i>
+            <span>Chat</span>
+        </a>
+        <a href="#footer" class="mobile-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Contacto</span>
+        </a>
+    </nav>
 
     <script src="js/scroll-nav.js"></script>
     <script src="js/main.js"></script>
