@@ -161,10 +161,11 @@ endforeach; ?>
                             <?php
     endforeach; ?>
                         </ul>
-                        <button class="btn-more-info">
+                        <a href="https://wa.me/<?php echo $content['whatsapp']['number']; ?>?text=<?php echo urlencode('Hola, me gustaría tener más información sobre ' . $service['title']); ?>" 
+                           target="_blank" class="btn-more-info">
                             Más información
                             <span class="btn-arrow">→</span>
-                        </button>
+                        </a>
                     </div>
 
                     <!-- Visual Side -->
@@ -222,7 +223,7 @@ endforeach; ?>
 
                         <div class="footer-copyright"
                             style="text-align: left; border: none; padding-top: 2rem; margin-top: auto;">
-                            <p>Copyright © 2024 • Icono Virtual S.A.S.</p>
+                            <p>Copyright © <?php echo date('Y'); ?> • Icono Virtual S.A.S.</p>
                         </div>
                     </div>
 

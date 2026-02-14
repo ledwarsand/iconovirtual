@@ -174,6 +174,10 @@ button:active,
     scroll-snap-align: start;
 }
 
+.hero .container {
+    max-width: 1400px;
+}
+
 .hero-content {
     text-align: center;
     position: relative;
@@ -182,7 +186,7 @@ button:active,
 
 .hero-title {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-bold);
     line-height: 1.1;
     margin-bottom: var(--spacing-md);
     color: var(--color-purple);
@@ -202,9 +206,9 @@ button:active,
 }
 
 .hero-text-side {
-    flex: 1;
+    flex: 1.4;
     text-align: left;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .hero-image-side {
@@ -224,7 +228,7 @@ button:active,
 
 .hero-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-md);
     color: var(--color-purple);
     animation: fadeInUp 1s ease-out;
@@ -372,6 +376,10 @@ html {
     justify-content: center;
 }
 
+.service-slide .container {
+    max-width: 1400px;
+}
+
 .service-content-wrapper {
     display: flex;
     gap: var(--spacing-xl);
@@ -395,6 +403,7 @@ html {
     box-shadow: none;
     /* Minimalist - no card look */
     padding: 0;
+    flex: 1.4;
     opacity: 0;
     transform: translateX(-50px);
     transition: all 1s ease-out;
@@ -465,12 +474,12 @@ html {
 /* Visual Side - Abstract AI Art using CSS */
 .service-visual {
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
     aspect-ratio: 1 / 1;
     /* Match square images */
     background: transparent;
+    flex: 1;
     border-radius: 40px;
-    /* Highly rounded */
     position: relative;
     overflow: hidden;
     display: flex;
@@ -712,7 +721,7 @@ html {
 
 .form-title {
     font-size: 2rem;
-    font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-bold);
     text-align: left;
     margin-bottom: var(--spacing-lg);
     color: var(--color-purple);
@@ -1132,7 +1141,7 @@ html {
     font-size: 2.5rem;
     color: var(--color-purple);
     margin-bottom: var(--spacing-md);
-    font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-bold);
 }
 
 .contact-item {
@@ -1166,6 +1175,7 @@ html {
     border: none;
     border-radius: 50px;
     color: #000000;
+    text-decoration: none;
     font-size: 1.1rem;
     font-weight: var(--font-weight-bold);
     font-family: var(--font-family);
@@ -1183,6 +1193,7 @@ html {
 /* Alernate colors for buttons */
 .service-slide:nth-child(even) .btn-more-info {
     background: var(--color-orange);
+    color: #ffffff;
     box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
