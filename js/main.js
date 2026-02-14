@@ -95,6 +95,7 @@ function initializeForm() {
         const data = {
             name: formData.get('name'),
             email: formData.get('email'),
+            phone: formData.get('phone'),
             service: formData.get('service')
         };
 
@@ -164,6 +165,12 @@ function validateForm(data) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!data.email || !emailRegex.test(data.email)) {
         showNotification('Por favor, ingresa un email válido.', 'error');
+        return false;
+    }
+
+    // Phone validation
+    if (!data.phone || data.phone.trim().length < 7) {
+        showNotification('Por favor, ingresa un teléfono válido.', 'error');
         return false;
     }
 
