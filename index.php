@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png"
+        href="https://iconovirtual.com.co/wp-content/uploads/2024/05/cropped-favicon-270x270.png">
 
     <?php
 // Load tracking configuration
@@ -22,9 +24,9 @@ if ($tracking['google_tag_manager']['enabled']) {
             w[l] = w[l] || []; w[l].push({
                 'gtm.start': \n";
     echo "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n";
-    echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n";
-    echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n";
-    echo "})(window,document,'script','dataLayer','" . $tracking['google_tag_manager']['container_id'] . "');</script>\n";
+                echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n";
+                echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n";
+                echo "})(window,document,'script','dataLayer','" .$tracking['google_tag_manager']['container_id']. "');</script>\n";
     echo "<!-- End Google Tag Manager -->\n";
 }
 
@@ -45,16 +47,16 @@ if ($tracking['meta_pixel']['enabled']) {
     echo "<!-- Meta Pixel Code -->\n";
     echo "<script>\n";
     echo "!function(f,b,e,v,n,t,s)\n";
-    echo "{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n";
-    echo "n.callMethod.apply(n,arguments):n.queue.push(arguments)};\n";
-    echo "if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\n";
-    echo "n.queue=[];t=b.createElement(e);t.async=!0;\n";
-    echo "t.src=v;s=b.getElementsByTagName(e)[0];\n";
-    echo "s.parentNode.insertBefore(t,s)}(window, document,'script',\n";
-    echo "'https://connect.facebook.net/en_US/fbevents.js');\n";
-    echo "fbq('init', '" . $tracking['meta_pixel']['pixel_id'] . "');\n";
-    echo "fbq('track', 'PageView');\n";
-    echo "</script>\n";
+                echo "{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n";
+                echo "n.callMethod.apply(n,arguments):n.queue.push(arguments)};\n";
+                echo "if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\n";
+                echo "n.queue=[];t=b.createElement(e);t.async=!0;\n";
+                echo "t.src=v;s=b.getElementsByTagName(e)[0];\n";
+                echo "s.parentNode.insertBefore(t,s)}(window, document,'script',\n";
+                echo "'https://connect.facebook.net/en_US/fbevents.js');\n";
+                echo "fbq('init', '" .$tracking['meta_pixel']['pixel_id']. "');\n";
+                echo "fbq('track', 'PageView');\n";
+                echo "</script>\n";
     echo "<noscript><img height='1' width='1' style='display:none'\n";
     echo "src='https://www.facebook.com/tr?id=" . $tracking['meta_pixel']['pixel_id'] . "&ev=PageView&noscript=1'\n";
     echo "/></noscript>\n";
@@ -122,6 +124,12 @@ endforeach; ?>
                     <p class="hero-subtitle">
                         <?php echo $content['hero']['subtitle']; ?>
                     </p>
+                    <div class="hero-cta-container" style="margin-top: 2.5rem;">
+                        <a href="#footer" class="btn-primary"
+                            style="display: inline-block; width: auto; padding: 18px 45px;">
+                            <?php echo $content['hero']['cta']; ?>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Right: Image -->
@@ -156,14 +164,14 @@ endforeach; ?>
                         <ul class="service-details">
                             <?php foreach ($service['details'] as $detail): ?>
                             <li>
-                                <?php echo $detail; ?>
+                                <?php echo preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', $detail); ?>
                             </li>
                             <?php
     endforeach; ?>
                         </ul>
-                        <a href="https://wa.me/<?php echo $content['whatsapp']['number']; ?>?text=<?php echo urlencode('Hola, me gustaría tener más información sobre ' . $service['title']); ?>" 
-                           target="_blank" class="btn-more-info">
-                            Más información
+                        <a href="https://wa.me/<?php echo $content['whatsapp']['number']; ?>?text=<?php echo urlencode('Hola, me gustaría tener más información sobre ' . $service['title']); ?>"
+                            target="_blank" class="btn-more-info">
+                            <?php echo $service['cta']; ?>
                             <span class="btn-arrow">→</span>
                         </a>
                     </div>
@@ -223,7 +231,9 @@ endforeach; ?>
 
                         <div class="footer-copyright"
                             style="text-align: left; border: none; padding-top: 2rem; margin-top: auto;">
-                            <p>Copyright © <?php echo date('Y'); ?> • Icono Virtual S.A.S.</p>
+                            <p>Copyright ©
+                                <?php echo date('Y'); ?> • Icono Virtual S.A.S.
+                            </p>
                         </div>
                     </div>
 
