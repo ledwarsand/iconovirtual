@@ -1,0 +1,14 @@
+{
+    "google_analytics": {
+        "enabled": false,
+        "tracking_id": "G-XXXXXXXXXX"
+    },
+    "google_tag_manager": {
+        "enabled": false,
+        "container_id": "GTM-XXXXXXX"
+    },
+    "meta_pixel": {
+        "enabled": false,
+        "pixel_id": "1234567890"
+    }
+}

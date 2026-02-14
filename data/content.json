@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title": "Soluciones Inteligentes para que tu negocio siga creciendo",
+    "subtitle": "Atención 24/7 y comunicación automatizada para no perder ninguna oportunidad"
+  },
+  "services": [
+    {
+      "id": 1,
+      "agent_name": "Agente IA News",
+      "title": "Noticiero Corporativo",
+      "description": "Mantén a tu equipo y clientes sincronizados con un noticiero ágil y automatizado.",
+      "details": [
+        "Producción automática de video a partir de texto",
+        "Avatares IA hiperrealistas multilingües",
+        "Reducción de costos de producción en un 90%",
+        "Distribución instantánea por WhatsApp y redes"
+      ],
+      "icon": "megaphone",
+      "css_class": "service-news"
+    },
+    {
+      "id": 2,
+      "agent_name": "Agente AgendaPro",
+      "title": "Agendamiento Inteligente",
+      "description": "Tu asistente virtual que gestiona citas y optimiza tu calendario 24/7.",
+      "details": [
+        "Sincronización en tiempo real con Google Calendar",
+        "Recordatorios automáticos vía WhatsApp",
+        "Recuperación de citas canceladas",
+        "Calificación de leads antes de agendar"
+      ],
+      "icon": "calendar",
+      "css_class": "service-agenda"
+    },
+    {
+      "id": 3,
+      "agent_name": "Agente ChatBot 24/7",
+      "title": "Atención al Cliente",
+      "description": "Responde dudas, captura datos y cierra ventas mientras duermes.",
+      "details": [
+        "Entrenamiento con tu propia base de conocimiento",
+        "Respuestas naturales con IA Generativa",
+        "Escalamiento a humanos cuando es necesario",
+        "Análisis de sentimiento de las conversaciones"
+      ],
+      "icon": "chat",
+      "css_class": "service-chat"
+    }
+  ],
+  "form": {
+    "title": "Empezar ahora",
+    "fields": {
+      "name": "Nombre",
+      "email": "Email Corporativo",
+      "service": "Servicio de Interés"
+    },
+    "button": "Empezar ahora"
+  },
+  "whatsapp": {
+    "number": "573001234567",
+    "message": "Hola, me interesa conocer más sobre Icono Virtual"
+  }
+}

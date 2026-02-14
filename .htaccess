@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirigir de /servicio/nombre-servicio a servicio.php?slug=nombre-servicio
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^servicio/([\w-]+)$ servicio.php?slug=$1 [L,QSA]
+
+# Quitar la extensión .php de los archivos (ej: /contacto -> contacto.php)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+DirectoryIndex index.php
+
