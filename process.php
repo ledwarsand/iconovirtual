@@ -4,6 +4,7 @@
 // ============================================
 
 header('Content-Type: application/json');
+date_default_timezone_set('America/Bogota');
 
 // Load tracking configuration
 $tracking = json_decode(file_get_contents('data/tracking.json'), true);
@@ -51,7 +52,11 @@ $lead = [
 $leadsFile = 'data/leads.json';
 $leads = [];
 if (file_exists($leadsFile)) {
-    $leads = json_decode(file_get_contents($leadsFile), true) ?? [];
+    $fileContent = file_get_contents($leadsFile);
+    $leads = json_decode($fileContent, true);
+    if (!is_array($leads)) {
+        $leads = [];
+    }
 }
 $leads[] = $lead;
 file_put_contents($leadsFile, json_encode($leads, JSON_PRETTY_PRINT));
@@ -66,7 +71,7 @@ $message .= "Teléfono: $phone\n";
 $message .= "Servicio de Interés: $service\n";
 $message .= "Fecha: " . $lead['timestamp'] . "\n";
 
-$headers = "From: noreply@iconovirtual.com\r\n";
+$headers = "From: Leads Icono Virtual <noreply@iconovirtual.com>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
@@ -79,8 +84,10 @@ $googleScriptUrl = 'https://script.google.com/a/macros/iconovirtual.com/s/AKfycb
 if ($googleScriptUrl) {
     $ch = curl_init($googleScriptUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // Important for Google Scripts
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($lead));
     curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Often needed on local servers (XAMPP)
     curl_exec($ch);
     curl_close($ch);
 }

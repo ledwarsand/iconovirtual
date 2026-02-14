@@ -12,8 +12,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png"
         href="https://iconovirtual.com.co/wp-content/uploads/2024/05/cropped-favicon-270x270.png">
+    <meta name="robots" content="index, follow">
 
     <?php
+// Security Headers
+header("X-Frame-Options: SAMEORIGIN");
+header("X-Content-Type-Options: nosniff");
+header("X-XSS-Protection: 1; mode=block");
+header("Referrer-Policy: strict-origin-when-cross-origin");
+
 // Load tracking configuration
 $tracking = json_decode(file_get_contents('data/tracking.json'), true);
 
@@ -178,16 +185,7 @@ endforeach; ?>
 
                     <!-- Visual Side -->
                     <div class="service-visual" data-aos="fade-left">
-                        <?php
-    // Map service IDs to image filenames
-    $imageMap = [
-        1 => 'agente_ia_noticiero.png',
-        2 => 'agente_ia_citas.png',
-        3 => 'agente_ia_ventas.png'
-    ];
-    $imageSrc = isset($imageMap[$service['id']]) ? $imageMap[$service['id']] : 'agente-ia-iconovirtual.png';
-?>
-                        <img src="images/<?php echo $imageSrc; ?>" alt="<?php echo $service['agent_name']; ?>"
+                        <img src="images/<?php echo $service['image']; ?>" alt="<?php echo $service['agent_name']; ?>"
                             class="service-image" loading="lazy">
                     </div>
                 </div>
@@ -212,14 +210,14 @@ endforeach; ?>
                             <div class="contact-icon"><i class="fas fa-phone"></i></div>
                             <div>
                                 <strong>Llámanos</strong><br>
-                                3171682926
+                                <?php echo $content['whatsapp']['number']; ?>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                             <div>
                                 <strong>Escríbenos</strong><br>
-                                comercial@iconovirtual.com
+                                <?php echo $content['whatsapp']['email']; ?>
                             </div>
                         </div>
 
@@ -259,8 +257,8 @@ endforeach; ?>
                                         <?php echo $content['form']['fields']['service']; ?>
                                     </option>
                                     <?php foreach ($content['services'] as $service): ?>
-                                    <option value="<?php echo $service['title']; ?>">
-                                        <?php echo $service['title']; ?>
+                                    <option value="<?php echo $service['agent_name']; ?>">
+                                        <?php echo $service['agent_name']; ?>
                                     </option>
                                     <?php
 endforeach; ?>
@@ -307,18 +305,18 @@ endforeach; ?>
 
     <!-- Mobile Bottom Navigation -->
     <nav class="mobile-bottom-nav">
-        <a href="#service-1" class="mobile-nav-item">
-            <i class="fas fa-bullhorn"></i>
-            <span>Noticias</span>
+        <?php
+$icons = ['1' => 'fas fa-bullhorn', '2' => 'fas fa-calendar-alt', '3' => 'fas fa-comments'];
+foreach ($content['services'] as $s):
+?>
+        <a href="#service-<?php echo $s['id']; ?>" class="mobile-nav-item">
+            <i class="<?php echo $icons[$s['id']] ?? 'fas fa-robot'; ?>"></i>
+            <span>
+                <?php echo str_replace('Agente IA ', '', $s['agent_name']); ?>
+            </span>
         </a>
-        <a href="#service-2" class="mobile-nav-item">
-            <i class="fas fa-calendar-alt"></i>
-            <span>Agenda</span>
-        </a>
-        <a href="#service-3" class="mobile-nav-item">
-            <i class="fas fa-comments"></i>
-            <span>Chat</span>
-        </a>
+        <?php
+endforeach; ?>
         <a href="#footer" class="mobile-nav-item">
             <i class="fas fa-envelope"></i>
             <span>Contacto</span>

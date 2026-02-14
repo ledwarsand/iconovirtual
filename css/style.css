@@ -1411,6 +1411,18 @@ html {
     .service-desc-main {
         font-size: 1rem;
     }
+
+    /* Force visibility on mobile if they are stuck with opacity 0 from desktop styles */
+    .service-text,
+    .service-visual {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .agent-name {
+        font-size: 0.9rem;
+    }
 }
 
 /* Hide mobile nav on desktop */

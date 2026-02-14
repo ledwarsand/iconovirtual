@@ -1,68 +1,72 @@
 {
-  "hero": {
-    "title": "Deja de perder ventas por falta de respuesta: Automatiza tu negocio con Inteligencia Artificial",
-    "subtitle": "Entrenamos Agentes IA personalizados que venden, agendan y comunican 24/7 con la misma precisión que tu mejor empleado.",
-    "cta": "Quiero mi agente ahora"
-  },
-  "services": [
-    {
-      "id": 1,
-      "agent_name": "Agente IA News",
-      "title": "Lidera tu industria con un Noticiero Corporativo que escala tu autoridad",
-      "description": "Multiplica tu presencia digital sin estudios costosos ni cámaras. Convierte tus reportes en videos impactantes en minutos.",
-      "details": [
-        "**90% menos costos** de producción en comparación con formatos tradicionales",
-        "**Avatares hiperrealistas** que hablan por tu marca en múltiples idiomas",
-        "**Distribución masiva** instantánea por WhatsApp para conectar",
-        "**Rapidez total**: de texto a video profesional en segundos"
-      ],
-      "icon": "megaphone",
-      "css_class": "service-news",
-      "cta": "Empezar mi automatización"
+    "hero": {
+        "title": "Automatiza tu negocio con Inteligencia Artificial",
+        "subtitle": "Entrenamos Agentes IA personalizados que venden, agendan y comunican 24\/7 con la misma precisión que tu mejor empleado.",
+        "cta": "Quiero mi agente ahora"
     },
-    {
-      "id": 2,
-      "agent_name": "Agente AgendaPro",
-      "title": "Dile adiós a las salas vacías y hola a una agenda llena automáticamente",
-      "description": "Recupera el control de tu tiempo. Tu asistente virtual gestiona cada cita sin que tú tengas que mover un dedo.",
-      "details": [
-        "**Sincronización total** con Google Calendar para evitar cruces",
-        "**Recordatorios automáticos** que eliminan inasistencias en un 70%",
-        "**Calificación inteligente** para hablar solo con leads reales",
-        "**Agendamiento 24/7**: tus clientes eligen su horario siempre"
-      ],
-      "icon": "calendar",
-      "css_class": "service-agenda",
-      "cta": "Organizar mi agenda ya"
+    "services": [
+        {
+            "id": 1,
+            "agent_name": "Agente IA News",
+            "title": "Lidera tu industria con un Noticiero Corporativo que escala tu autoridad",
+            "description": "Multiplica tu presencia digital sin estudios costosos ni cámaras. Convierte tus reportes en videos impactantes en minutos.",
+            "image": "agente_ia_noticiero.png",
+            "details": [
+                "**90% menos costos** de producción en comparación con formatos tradicionales",
+                "**Avatares hiperrealistas** que hablan por tu marca en múltiples idiomas",
+                "**Distribución masiva** instantánea por WhatsApp para conectar",
+                "**Rapidez total**: de texto a video profesional en segundos"
+            ],
+            "icon": "megaphone",
+            "css_class": "service-news",
+            "cta": "Empezar mi automatización"
+        },
+        {
+            "id": 2,
+            "agent_name": "Agente AgendaPro",
+            "title": "Dile adiós a las salas vacías y hola a una agenda llena automáticamente",
+            "description": "Recupera el control de tu tiempo. Tu asistente virtual gestiona cada cita sin que tú tengas que mover un dedo.",
+            "image": "agente_ia_citas.png",
+            "details": [
+                "**Sincronización total** con Google Calendar para evitar cruces",
+                "**Recordatorios automáticos** que eliminan inasistencias en un 70%",
+                "**Calificación inteligente** para hablar solo con leads reales",
+                "**Agendamiento 24\/7**: tus clientes eligen su horario siempre"
+            ],
+            "icon": "calendar",
+            "css_class": "service-agenda",
+            "cta": "Organizar mi agenda ya"
+        },
+        {
+            "id": 3,
+            "agent_name": "Agente de ventas 24\/7",
+            "title": "Un vendedor que \"piensa\" y cierra negocios por WhatsApp mientras descansas",
+            "description": "No es otro bot básico. Es un Agente IA con análisis de sentimiento que entiende, persuade y escala tu facturación.",
+            "image": "agente_ia_ventas.png",
+            "details": [
+                "**Entrenado con tu ADN**: conoce tu conocimiento y responde como experto",
+                "**Análisis de sentimiento**: detecta el humor y adapta su discurso para cerrar",
+                "**Cero esperas**: respuestas instantáneas para que nadie se escape",
+                "**Conversaciones humanas**: IA generativa que genera confianza real"
+            ],
+            "icon": "chat",
+            "css_class": "service-chat",
+            "cta": "Quiero vender más con IA"
+        }
+    ],
+    "form": {
+        "title": "Empieza hoy mismo",
+        "fields": {
+            "name": "Nombre",
+            "email": "Email Corporativo",
+            "phone": "Teléfono \/ WhatsApp",
+            "service": "Agente de Interés"
+        },
+        "button": "Activar mi automatización"
     },
-    {
-      "id": 3,
-      "agent_name": "Agente de ventas 24/7",
-      "title": "Un vendedor que \"piensa\" y cierra negocios por WhatsApp mientras descansas",
-      "description": "No es otro bot básico. Es un Agente IA con análisis de sentimiento que entiende, persuade y escala tu facturación.",
-      "details": [
-        "**Entrenado con tu ADN**: conoce tu conocimiento y responde como experto",
-        "**Análisis de sentimiento**: detecta el humor y adapta su discurso para cerrar",
-        "**Cero esperas**: respuestas instantáneas para que nadie se escape",
-        "**Conversaciones humanas**: IA generativa que genera confianza real"
-      ],
-      "icon": "chat",
-      "css_class": "service-chat",
-      "cta": "Quiero vender más con IA"
+    "whatsapp": {
+        "number": "573171682926",
+        "email": "comercial@iconovirtual.com",
+        "message": "Hola, me interesa conocer más sobre los Agentes IA de Icono Virtual"
     }
-  ],
-  "form": {
-    "title": "Empieza hoy mismo",
-    "fields": {
-      "name": "Nombre",
-      "email": "Email Corporativo",
-      "phone": "Teléfono / WhatsApp",
-      "service": "Agente de Interés"
-    },
-    "button": "Activar mi automatización"
-  },
-  "whatsapp": {
-    "number": "573171682926",
-    "message": "Hola, me interesa conocer más sobre los Agentes IA de Icono Virtual"
-  }
 }
