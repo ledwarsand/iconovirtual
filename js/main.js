@@ -136,6 +136,11 @@ function initializeForm() {
                             'event_label': data.service
                         });
                     }
+
+                    // Track Google Ads conversion if enabled
+                    if (typeof trackGoogleAdsConversion !== 'undefined') {
+                        trackGoogleAdsConversion();
+                    }
                 } else {
                     showNotification('Hubo un error. Por favor, intenta nuevamente.', 'error');
                 }

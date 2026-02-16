@@ -49,6 +49,26 @@ if ($tracking['google_analytics']['enabled']) {
     echo "<!-- End Google Analytics -->\n";
 }
 
+// Google Ads
+if ($tracking['google_ads']['enabled']) {
+    echo "<!-- Google Ads -->\n";
+    // If Google Analytics is not enabled, we need to load gtag.js
+    if (!$tracking['google_analytics']['enabled']) {
+        echo "<script async src='https://www.googletagmanager.com/gtag/js?id=" . $tracking['google_ads']['conversion_id'] . "'></script>\n";
+        echo "<script>\n";
+        echo "window.dataLayer = window.dataLayer || [];\n";
+        echo "function gtag(){dataLayer.push(arguments);}\n";
+        echo "gtag('js', new Date());\n";
+    }
+    else {
+        echo "<script>\n";
+    }
+    echo "gtag('config', '" . $tracking['google_ads']['conversion_id'] . "');\n";
+    echo "</script>\n";
+    echo "<!-- End Google Ads -->\n";
+}
+
+
 // Meta Pixel
 if ($tracking['meta_pixel']['enabled']) {
     echo "<!-- Meta Pixel Code -->\n";
@@ -156,7 +176,7 @@ endforeach; ?>
         <section class="service-slide <?php echo $service['css_class']; ?>-section"
             id="service-<?php echo $service['id']; ?>">
             <div class="container">
-                <div class="service-content-wrapper <?php echo ($index % 2 === 0) ? 'is-reversed' : ''; ?>">
+                <div class="service-content-wrapper <?php echo($index % 2 === 0) ? 'is-reversed' : ''; ?>">
                     <!-- Text Side -->
                     <div class="service-text" data-aos="fade-right">
                         <div class="agent-name">
@@ -324,6 +344,7 @@ endforeach; ?>
     </nav>
 
     <script src="js/scroll-nav.js"></script>
+    <script src="js/google-ads-tracking.js"></script>
     <script src="js/main.js"></script>
     <script src="js/parallax.js"></script>
 </body>

@@ -7,6 +7,11 @@
         "enabled": false,
         "container_id": "GTM-XXXXXXX"
     },
+    "google_ads": {
+        "enabled": false,
+        "conversion_id": "AW-XXXXXXXXXX",
+        "conversion_label": "XXXXXXXXXXXX"
+    },
     "meta_pixel": {
         "enabled": false,
         "pixel_id": "1234567890"
